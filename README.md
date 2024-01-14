@@ -1,4 +1,4 @@
-# Go Cheatsheet for Beginners
+# Go Cheatsheet
 
 ---
 
