@@ -1,14 +1,8 @@
 package main
 
 import (
-	//"mypack/condition"
-	//"mypack/loops"
-	//"mypack/arrays"
-	//"mypack/slices"
-	//"fmt"
-	//"mypack/functions"
-	//"mypack/maps"
-	"mypack/ranges"
+	"fmt"
+	"mypack/channel"
 )
 
 func main() {
@@ -46,6 +40,26 @@ func main() {
 	//ranges.Range1()
 	//ranges.OddEven()
 
-	ranges.Range2()
+	//ranges.Range2()
+
+	//num := 10
+	//pointers.Pointers1(&num)
+
+	//structs.Struct1()
+	
+	// channel 
+	evenCh := make(chan int)
+	oddCh := make(chan int)
+
+	go channel.Channel1(evenCh)
+	go channel.Channel2(oddCh)
+
+	even, odd := <-evenCh, <-oddCh
+
+	mul := even * odd
+
+	fmt.Println("Even: ", even)
+	fmt.Println("Odd: ", odd)
+	fmt.Println("Multiplication: ", mul)
 
 }
